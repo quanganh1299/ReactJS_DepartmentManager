@@ -1,0 +1,36 @@
+.manager__container {
+    position: relative;
+    min-height: 100vh;
+  }
+  
+  .manager__content {
+    padding-bottom: 65px; /* Chiều cao của footer */
+  }
+  
+  .manager__footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    background-color: #001529;
+    color: #fff;
+  }
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: #1677FF;
+  border-radius: 5px; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #5fa2ff; 
+}
+  

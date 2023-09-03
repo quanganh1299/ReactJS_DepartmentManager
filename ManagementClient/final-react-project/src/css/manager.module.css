@@ -1,0 +1,84 @@
+.manager__title_form{
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.manager__title_icon_form{
+    font-size: 25px;
+    color: #1677ff;
+}
+
+.manager__title_icon_form:hover{
+    color: #4096FF;
+}
+
+.manager__filter_form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 15px 5px;
+}
+
+.manager__filter_field{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.manager__input_search {
+    width: 200px;
+    margin-right: 15px;
+    height: 35px;
+    border-radius: 5px;
+    border: 1px solid #d9d9d9;
+    outline: none;
+    text-indent: 10px;
+}
+
+.manager__input_search:hover,
+.manager__input_id:hover,
+.manager__input_date:hover{
+    border-color: #4096ff;
+    border-inline-end-width: 1px;
+}
+
+.manager__input_search:focus,
+.manager__input_id:focus,
+.manager__input_date:focus{
+    border-color: #4096ff;
+    box-shadow: 0 0 0 2px rgba(5, 145, 255, 0.1);
+    border-inline-end-width: 1px;
+    outline: 0;
+}
+
+.manager__input_id,
+.manager__input_date{
+    width: 200px;
+    margin-right: 15px;
+    height: 35px;
+    border-radius: 5px;
+    border: 1px solid #d9d9d9;
+    outline: none;
+    text-indent: 10px;
+    margin-right: 10px;
+    margin-left: 10px; 
+}
+
+
+.manager__input_date::-webkit-calendar-picker-indicator {
+    display: block;
+    width: 20px;
+    height: 20px;
+    padding-right: 10px;
+    border-width: thin;
+}
+
+.manager__btn_search{
+    margin-right: 10px;
+}
+
+.manager__btn_create{
+    right: 15px;
+    bottom: 80px;
+}

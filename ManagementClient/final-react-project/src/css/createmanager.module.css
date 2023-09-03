@@ -1,0 +1,47 @@
+.manager__create_form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 80vh;
+}
+
+.manager__input_create_form {
+    width: 200px;
+    margin: 15px 0 0 15px;
+    height: 35px;
+    border-radius: 5px;
+    border: 1px solid #d9d9d9;
+    outline: none;
+    text-indent: 10px;
+}
+
+.manager__input_create_form:hover{
+    border-color: #4096ff;
+    border-inline-end-width: 1px;
+}
+
+.manager__input_create_form:focus{
+    border-color: #4096ff;
+    box-shadow: 0 0 0 2px rgba(5, 145, 255, 0.1);
+    border-inline-end-width: 1px;
+    outline: 0;
+}
+
+.manager__btn_create_form_group{
+    margin-left: 75px;
+    margin-top: 5px;
+}
+
+.manager__create_btn{
+    height: 32px;
+    margin: 15px 10px 0 0;
+}
+
+.manager__message{
+    margin-top: 10vh;
+}
+
+
+
+
