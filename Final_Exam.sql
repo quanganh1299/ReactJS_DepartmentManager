@@ -24,9 +24,10 @@ CREATE TABLE `Account`(
     first_name				NVARCHAR(50) NOT NULL,
     last_name				NVARCHAR(50) NOT NULL,
     `role` 					ENUM('ADMIN','EMPLOYEE','MANAGER') NOT NULL DEFAULT 'EMPLOYEE',
-	created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-	updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+	created_at 				TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	updated_at 				TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     department_id 			INT UNSIGNED,
+    email					VARCHAR(50) NOT NULL UNIQUE KEY,
     FOREIGN KEY(department_id) REFERENCES Department(id) ON DELETE SET NULL
 );
 
@@ -49,17 +50,17 @@ VALUES
                     
 -- Add data Account
 -- Password: 123456
-INSERT INTO `Account`(	username		,						`password`									,	first_name	,	last_name		,		`role`		,	department_id	)
-VALUES 				(	'dangblack'		,   '$2a$12$lRKESj1omJFB89wuWqHvr.ojI7nzrGdmQ8CmcnDEZf5GAGv1LU7Vi'	,	'Nguyen Hai'	,	'Dang'		,		'ADMIN'		,		'5'			),
-					(	'quanganh'		,	'$2a$12$lRKESj1omJFB89wuWqHvr.ojI7nzrGdmQ8CmcnDEZf5GAGv1LU7Vi'	,	'Doan Quang'	,	'Anh'		,		'ADMIN'	,			'1'			),
-                    (	'vanchien'		,	'$2a$12$lRKESj1omJFB89wuWqHvr.ojI7nzrGdmQ8CmcnDEZf5GAGv1LU7Vi'	,	'Tran Van'		,	'Chien'		,		'ADMIN'		,		'1'			),
-                    (	'cocoduongqua'	,	'$2a$12$lRKESj1omJFB89wuWqHvr.ojI7nzrGdmQ8CmcnDEZf5GAGv1LU7Vi'	,	'Nguyen Co'		,	'Co'		,		'EMPLOYEE'	,		'1'			),
-                    (	'doccocaubai'	,   '$2a$12$lRKESj1omJFB89wuWqHvr.ojI7nzrGdmQ8CmcnDEZf5GAGv1LU7Vi'	,	'Nguyen Doc'	,	'Co'		,		'ADMIN'		,		'2'			),
-                    (	'khabanh'		,   '$2a$12$lRKESj1omJFB89wuWqHvr.ojI7nzrGdmQ8CmcnDEZf5GAGv1LU7Vi'	,	'Phan Kha'		,	'Bang'		,		'EMPLOYEE'	,		'2'			),
-                    (	'huanhoahong'	,   '$2a$12$lRKESj1omJFB89wuWqHvr.ojI7nzrGdmQ8CmcnDEZf5GAGv1LU7Vi'	,	'Tran Van'		,	'Huan'		,		'ADMIN'		,		'2'			),
-                    (	'tungnui'		,   '$2a$12$lRKESj1omJFB89wuWqHvr.ojI7nzrGdmQ8CmcnDEZf5GAGv1LU7Vi'	,	'Nguyen Tung'	,	'Nui'		,		'MANAGER'	,		'8'			),
-                    (	'duongghuu'		,   '$2a$12$lRKESj1omJFB89wuWqHvr.ojI7nzrGdmQ8CmcnDEZf5GAGv1LU7Vi'	,	'Phan Duong'	,	'Huu'		,		'ADMIN'		,		'9'			),
-                    (	'vtiaccademy'	,   '$2a$12$lRKESj1omJFB89wuWqHvr.ojI7nzrGdmQ8CmcnDEZf5GAGv1LU7Vi'	,	'Tran'			,	'Academy'	,		'MANAGER'	,		'10'		);
+INSERT INTO `Account`(	username		, 						`password`									,	first_name	,	last_name		,		`role`		,	department_id   ,     email							)
+VALUES 				(	'dangblack'		,   '$2a$12$lRKESj1omJFB89wuWqHvr.ojI7nzrGdmQ8CmcnDEZf5GAGv1LU7Vi'	,	'Nguyen Hai'	,	'Dang'		,		'ADMIN'		,		'5'			,	'dang@gmail.com'				),
+					(	'quanganh'		,	'$2a$12$lRKESj1omJFB89wuWqHvr.ojI7nzrGdmQ8CmcnDEZf5GAGv1LU7Vi'	,	'Doan Quang'	,	'Anh'		,		'ADMIN'	,			'1'			,	'quanganhdoan55@gmail.com'		),
+                    (	'vanchien'		,	'$2a$12$lRKESj1omJFB89wuWqHvr.ojI7nzrGdmQ8CmcnDEZf5GAGv1LU7Vi'	,	'Tran Van'		,	'Chien'		,		'ADMIN'		,		'1'			,	'chien@gmail.com'				),
+                    (	'cocoduongqua'	,	'$2a$12$lRKESj1omJFB89wuWqHvr.ojI7nzrGdmQ8CmcnDEZf5GAGv1LU7Vi'	,	'Nguyen Co'		,	'Co'		,		'EMPLOYEE'	,		'1'			,	'co@gmail.com'					),
+                    (	'doccocaubai'	,   '$2a$12$lRKESj1omJFB89wuWqHvr.ojI7nzrGdmQ8CmcnDEZf5GAGv1LU7Vi'	,	'Nguyen Doc'	,	'Co'		,		'ADMIN'		,		'2'			,	'docco@gmail.com'				),
+                    (	'khabanh'		,   '$2a$12$lRKESj1omJFB89wuWqHvr.ojI7nzrGdmQ8CmcnDEZf5GAGv1LU7Vi'	,	'Phan Kha'		,	'Bang'		,		'EMPLOYEE'	,		'2'			,	'bang@gmail.com'				),
+                    (	'huanhoahong'	,   '$2a$12$lRKESj1omJFB89wuWqHvr.ojI7nzrGdmQ8CmcnDEZf5GAGv1LU7Vi'	,	'Tran Van'		,	'Huan'		,		'ADMIN'		,		'2'			,	'huan@gmail.com'				),
+                    (	'tungnui'		,   '$2a$12$lRKESj1omJFB89wuWqHvr.ojI7nzrGdmQ8CmcnDEZf5GAGv1LU7Vi'	,	'Nguyen Tung'	,	'Nui'		,		'MANAGER'	,		'8'			,	'nui@gmail.com'					),
+                    (	'duongghuu'		,   '$2a$12$lRKESj1omJFB89wuWqHvr.ojI7nzrGdmQ8CmcnDEZf5GAGv1LU7Vi'	,	'Phan Duong'	,	'Huu'		,		'ADMIN'		,		'9'			,	'huu@gmail.com'					),
+                    (	'vtiaccademy'	,   '$2a$12$lRKESj1omJFB89wuWqHvr.ojI7nzrGdmQ8CmcnDEZf5GAGv1LU7Vi'	,	'Tran'			,	'Academy'	,		'MANAGER'	,		'10'		,	'academy@gmail.com'				);
 				
                     
 UPDATE Department AS d
