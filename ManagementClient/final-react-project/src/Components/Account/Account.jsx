@@ -109,7 +109,7 @@ const Account = () => {
 
   const navigate = useNavigate();
 
-  const { setCurrent, setDisplayUsername, setInforUsername } = useContext(SetManagerContext);
+  const { setCurrent, setDisplayUsername, setInforUsername, setDisplayLogin } = useContext(SetManagerContext);
 
   const searchRef = useRef(null);
   const minCreatedDateRef = useRef(null);
@@ -177,6 +177,7 @@ const Account = () => {
               setAuthToken(null);
               sessionStorage.removeItem("token");
               setDisplayUsername('none');
+              setDisplayLogin('block');
               setCurrent('login');
               navigate('/login');
             }}

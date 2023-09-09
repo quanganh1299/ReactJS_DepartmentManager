@@ -10,7 +10,7 @@ const Login = () => {
 
   const [formItems, setFormItems] = useState({ username: '', password: '' });
 
-  const { setCurrent, setDisplayUsername, setInforUsername } = useContext(SetManagerContext);
+  const { setCurrent, setDisplayUsername, setInforUsername, setDisplayLogin } = useContext(SetManagerContext);
   const [messageApi, contextHolder] = message.useMessage();
 
   const navigate = useNavigate();
@@ -45,6 +45,7 @@ const Login = () => {
             }))
 
         setTimeout(() => {
+          setDisplayLogin('none');
           setCurrent('departments');
           navigate('/departments');
         }, 1800);

@@ -7,11 +7,12 @@ const HomePage = () => {
 
     const navigate = useNavigate();
 
-    const { setCurrent, setDisplayUsername, setInforUsername } = useContext(SetManagerContext);
+    const { setCurrent, setDisplayUsername, setInforUsername, setDisplayLogin } = useContext(SetManagerContext);
     setCurrent('homepage')
 
     const handleLoginClick = () => {
         setDisplayUsername('none');
+        setDisplayLogin('block');
         navigate('/login');
         setCurrent('login');
     }

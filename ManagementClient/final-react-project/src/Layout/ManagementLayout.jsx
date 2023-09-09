@@ -11,6 +11,8 @@ const ManagementLayout = () => {
 
   const { Header, Footer, Content } = Layout;
 
+  const [displayLogin, setDisplayLogin] = useState('block');
+
   const items = [
     {
       label: <Link to='/'>Trang chủ</Link>,
@@ -34,6 +36,7 @@ const ManagementLayout = () => {
       },
       key: 'login',
       icon: <IdcardOutlined />,
+      style: { display: displayLogin }
     },
   ];
 
@@ -54,7 +57,8 @@ const ManagementLayout = () => {
   const contextValue = {
     setCurrent,
     setDisplayUsername,
-    setInforUsername
+    setInforUsername,
+    setDisplayLogin
   };
 
 
