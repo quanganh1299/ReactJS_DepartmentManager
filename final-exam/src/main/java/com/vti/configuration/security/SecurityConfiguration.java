@@ -52,7 +52,7 @@ public class SecurityConfiguration {
         return http
                 .authorizeHttpRequests(authorizationManagerRequestMatcherRegistry -> authorizationManagerRequestMatcherRegistry
                         .requestMatchers("/api/v1/auth/register", "/api/v1/auth/login",
-                                "/api/v1/password/forgot-password", "/api/v1/password/reset-password",
+                                "/api/v1/password/**",
                                 "/swagger-ui/**", "/swagger-resources/**", "/v3/api-docs/**"
                         )
                         .permitAll()
@@ -102,7 +102,7 @@ public class SecurityConfiguration {
 
     @Bean
     public WebSecurityCustomizer webSecurityCustomizer(){
-        return (web) -> web.ignoring().requestMatchers("/pages/**", "/auth/**", "/password/**"
-                , "/swagger-ui/**", "/swagger-resources/**", "/v3/api-docs/**");
+        return (web) -> web.ignoring().requestMatchers("/pages/**", "/auth/**",
+                "/swagger-ui/**", "/swagger-resources/**", "/v3/api-docs/**");
     }
 }

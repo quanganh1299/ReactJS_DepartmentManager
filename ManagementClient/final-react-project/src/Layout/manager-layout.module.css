@@ -3,6 +3,12 @@
     min-height: 100vh;
   }
   
+  .manager__title{
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #FFF;
+  }
   .manager__content {
     padding-bottom: 65px; /* Chiều cao của footer */
   }

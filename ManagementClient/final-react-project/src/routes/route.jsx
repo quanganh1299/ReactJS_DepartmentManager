@@ -8,6 +8,7 @@ import EditDepartment from "../Components/Department/EditDepartment";
 import Account from "../Components/Account/Account";
 import EditAccount from "../Components/Account/EditAccount";
 import NewAccount from "../Components/Account/NewAccount";
+import ForgotPassword from "../Components/Login/ForgotPassword";
 
 export const route = [
     {
@@ -47,6 +48,10 @@ export const route = [
         {
           path:"/login",
           element: <Login />
+        },
+        {
+          path:"/login/forgor-password",
+          element: <ForgotPassword />
         }
       ]
     },

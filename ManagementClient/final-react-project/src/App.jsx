@@ -3,7 +3,7 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import {route} from './routes/route'
+import { route } from './routes/route'
 import './App.css'
 
 
